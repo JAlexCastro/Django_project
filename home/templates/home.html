@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/css-home.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="banner">
+            <div class="banner__logo">
+                <img src="{ % static 'img/logo.png' %}" alt="">
+            </div>
+
+            <ul>
+                <li><a>Inicio</a></li>
+                <li><a>Productos</a></li>
+                <li><a>Crear Producto</a></li>
+                <li><a>Iniciar Sesion</a></li>
+                <li><a>@Persona</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+
+        <div class="photo">
+            
+        </div>
+
+        <div class="column">
+            <div class="column__cont column__cont--right">
+                <h1 class="title">
+                    Echa un vistazo a nuestros productos
+                </h1>
+                <p>Visualiza todos los productos de nuestra
+                    empresa. ¡Te va encantar!</p>
+
+                <button><span>Ver productos</span></button>
+            </div>
+            
+            <div class="column__cont column__cont--left">
+                <h1 class="title">
+                    Sube tus propios productos
+                </h1>
+                <p>Sube tus productos para que los demás
+                    vean lo vean.</p>
+
+                <button><span>Subir productos</span></button>
+            </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <span>@Copyright-2023-SignFast</span>
+        <span>Contacto</span>
+    </footer>
+</body>
+</html>
