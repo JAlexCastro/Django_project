@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login/css-login.css' %}">
+    <title>Sing In</title>
+</head>
+<body>
+    
+    <form action="{% url 'iniciarSesion' %}" method="POST" class="form">
+        {% csrf_token %}
+        <h2 class="form__title">Iniciar Sesión</h2>
+        <p class="form_paragraph">
+            <a href="{% url 'autenticacion' %}" class="form__link">¿Aún no tienes una cuenta? </a>
+        </p>
+
+        <div class="form__container">
+            <div class="form__group">
+                <input type="text" class="form__input" name="username"  required placeholder=""> 
+                <label for="name" class="form__label">Nombre:</label>
+            </div>
+
+            <div class="form__group">
+                <input type="password" class="form__input" name="password" required placeholder=""> 
+                <label for="name" class="form__label">Contraseña:</label>
+            </div>
+
+            {{ error }}
+
+            <div class="form__submit">
+                <button><span>Ingresar</span></button>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+</html>
