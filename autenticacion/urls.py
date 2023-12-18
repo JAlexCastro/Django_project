@@ -7,6 +7,6 @@ urlpatterns = [
     path("login/", views.iniciarSesion, name="iniciarSesion"),
     path("logout/", views.cerrarSesion, name="cerrarSesion"),
     #path('home/', login_required(views.home, login_url='/login/'), name='home'),
-    path("home/", views.home, name="home" )
+    #path("home/", views.home, name="home" )
     
 ]
