@@ -5,14 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/css-home.css' %}">
+
+    <title>{% block title %}Default Title{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'base/css-base.css' %}">
 </head>
 <body>
     <header>
         <nav class="banner">
             <div class="banner__logo">
-                <img src="{ % static 'img/logo.png' %}" alt="">
+                <img src="{% static 'img/logo.png' %}" alt="">
             </div>
 
             <ul>
@@ -24,24 +26,30 @@
                 </li>
                 {% if user.is_authenticated %}
                     <li>
-                        <a href="#"> @{{user.first_name}} </a>
+                        <a href="#">{{user.first_name}} </a>
                     </li>
                     <li>
                         <a href="{% url 'cerrarSesion' %}">Cerrar sesion </a>
                     </li>
-                
                 {% else %}
-                <li>
-                    <a href="{% url 'iniciarSesion' %}">Iniciar sesion </a>
-                </li>
-
+                    <li>
+                        <a href="{% url 'iniciarSesion' %}">Iniciar sesion </a>
+                    </li>
                 {% endif %}
             </ul>
         </nav>
     </header>
+
+    {% block content %}
     
-{% block content %} 
+    {% endblock %}
+
+<footer>
+    <span>@Copyright-2023-SignFast</span>
+    <span>Contacto</span>
+</footer>
 
 
-{% endblock %}
-
+    
+</body>
+</html>

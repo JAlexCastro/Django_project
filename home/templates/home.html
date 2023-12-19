@@ -1,44 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title%} Home {% endblock%}
+
+{% block content %}
+
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
     <link rel="stylesheet" href="{% static 'css/css-home.css' %}">
-</head>
-<body>
-    <header>
-        <nav class="banner">
-            <div class="banner__logo">
-                <img src="{ % static 'img/logo.png' %}" alt="">
-            </div>
-
-            <ul>
-                <li><a>Inicio</a></li>
-                <li><a>Productos</a></li>
-                <li><a>Crear Producto</a></li>
-                <li>
-                    <span>|</span>
-                </li>
-                {% if user.is_authenticated %}
-                    <li>
-                        <a href="#"> @{{user.first_name}} </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'cerrarSesion' %}">Cerrar sesion </a>
-                    </li>
-                
-                {% else %}
-                <li>
-                    <a href="{% url 'iniciarSesion' %}">Iniciar sesion </a>
-                </li>
-
-                {% endif %}
-            </ul>
-        </nav>
-    </header>
 
     <section class="content">
 
@@ -71,9 +40,4 @@
 
     </section>
 
-    <footer>
-        <span>@Copyright-2023-SignFast</span>
-        <span>Contacto</span>
-    </footer>
-</body>
-</html>
+{% endblock content %}

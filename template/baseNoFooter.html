@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Default Title{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'base/css-head.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="banner">
+            <div class="banner__logo">
+                <img src="{% static 'img/logo.png' %}" alt="">
+            </div>
+
+            <ul>
+                <li><a>Inicio 2</a></li>
+                <li><a>Productos</a></li>
+                <li><a>Crear Producto</a></li>
+                <li>
+                    <span>|</span>
+                </li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="#"> @{{user.first_name}} </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'cerrarSesion' %}">Cerrar sesion </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'iniciarSesion' %}">Iniciar sesion </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    
+    {% endblock %}
+
