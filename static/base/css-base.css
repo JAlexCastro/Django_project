@@ -44,6 +44,8 @@ header {
 .banner a{
     margin-right: 10px;
     font-size: 20px;
+    text-decoration: none;
+    color: black;
 }
 
 .banner a:hover{
@@ -51,4 +53,22 @@ header {
     padding: 5px;
     border-radius: 6px;
     transition: 0.5s;
+}
+
+
+
+/** Footer **/
+
+footer {
+    margin-top: 25px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    align-items: center;
+    background-color: #1AEDBA;
+    color: #fff;
+    font-size: 20px;
 }

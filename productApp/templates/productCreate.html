@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title%} Home {% endblock%}
+
+{% block content %}
+
+
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/css-productCreate.css' %}" enctype="multipart/form-data">
+
+<section class="container">
+
+    <form action="" method="post"> {% csrf_token %}
+        
+        <h2>Crear Producto</h2>
+        
+        <div class="content">
+            <div class="input-box">
+                <label for="">Código</label>
+                <input type="text" name="code" placeholder="Ingrese el codigo" required>
+            </div>
+
+            <div class="input-box">
+                <label for="">Nombre del producto</label>
+                <input type="text" name="productName" placeholder="Ingrese el nombre" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="">Precio</label>
+                <input type="number" name="productPrice" placeholder="Ingrese el precio">
+            </div>
+
+            <div class="input-box">
+                <label for="">Stock</label>
+                <input type="number" name="productStock" placeholder="Ingrese el stock">
+            </div>
+
+            <div class="input-box">
+                <label for="">Descripción</label>
+                <input type="text" name="productDescription" placeholder="Ingrese descripcion del producto">
+            </div>
+
+
+            <div class="input-box">
+                <label for="">Imagen del producto</label>
+                <input class="file" type="file" name="productImage" placeholder="">
+            </div>
+        </div>
+        
+        {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <div class="button-container">
+            <button type="submit">Crear Producto</button>
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock content %}

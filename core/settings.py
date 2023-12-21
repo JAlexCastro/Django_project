@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "home",
     "autenticacion",
+    "productApp",
 ]
 
 
@@ -119,10 +120,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "/static/"
-#Apuntemos desde el directorio raís del proyecto hacia la carpeta 'static'
-STATIC_ROOT = BASE_DIR / "static"
-#STATICFILES_DIRS = [ 'proyectoGestion/static' ]
+
+# Indicamos donde deben ser guardados
+STATIC_URL = '/static/'
+# Indicamos donde deben ser buscados
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # Default primary key field type
@@ -138,3 +140,8 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_URL = 'home/'
 LOGIN_REDIRECT = '/'
 LOGOUT_REDIRECT = '/'
+
+# Indicamos donde deben ser guardados
+MEDIA_URL = "/media/"
+# Indicamos donde deben ser buscados
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -18,9 +18,9 @@
             </div>
 
             <ul>
-                <li><a>Inicio</a></li>
-                <li><a>Productos</a></li>
-                <li><a>Crear Producto</a></li>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'productList' %}">Productos</a></li>
+                <li><a href="{% url 'productCreate' %}">Crear Producto</a></li>
                 <li>
                     <span>|</span>
                 </li>
@@ -50,6 +50,5 @@
 </footer>
 
 
-    
 </body>
 </html>

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+
+{% block title%} Product List {% endblock%}
+
+{% block content%}
+ 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/css-productList.css' %}">
+
+
+<section class="card__container">
+
+    <div class="card">
+        <img src="{% static 'img/avena.jpg'%}" alt="">
+        <div class="card--content">
+            <P class="title"><strong>Producto:</strong>  
+                <span class="sub--title">Name</span>
+            </P>
+            
+            <P class="title"><strong>Stock:</strong> 
+                <span class="sub--title">INT</span>
+            </P>
+
+            <P class="title"><strong>Price:</strong> 
+                <span class="sub--title">$$</span>
+            </P>
+
+            <a href="" class="btn">Ver más</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'img/granos.jpg' %}" alt="">
+        <div class="card--content">
+            <P class="title"><strong>Producto:</strong>  
+                <span class="sub--title">Name</span>
+            </P>
+            
+            <P class="title"><strong>Stock:</strong> 
+                <span class="sub--title">INT</span>
+            </P>
+
+            <P class="title"><strong>Price:</strong> 
+                <span class="sub--title">$$</span>
+            </P>
+
+            <a href="" class="btn">Ver más</a>
+        </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'img/avena.jpg' %}" alt="">
+        <div class="card--content">
+            <P class="title"><strong>Producto:</strong>  
+                <span class="sub--title">Name</span>
+            </P>
+            
+            <P class="title"><strong>Stock:</strong> 
+                <span class="sub--title">INT</span>
+            </P>
+
+            <P class="title"><strong>Price:</strong> 
+                <span class="sub--title">$$</span>
+            </P>
+
+            <a href="" class="btn">Ver más</a>
+        
+    </div>
+</section>
+</body>
+</html>
+
+
+{% endblock content%}
