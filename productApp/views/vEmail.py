@@ -35,7 +35,10 @@ def send_email(request):
         
         # Enviar email
         email.send()
-
+        # Después de crear el producto con éxito
+        mensaje_exito = f"Se ha enviaso tu correo a {nombre}"
+        return render(request, 'productCreate.html', {"mensaje_exito": mensaje_exito})
+    
         messages.success(request, "Se ha enviaso tu correo")
         return redirect("home")
     
