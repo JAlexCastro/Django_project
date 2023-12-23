@@ -1,0 +1,25 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'base/css-popUp.css' %}" enctype="multipart/form-data">
+
+<section class="container">
+
+    <form action="" method=""> {% csrf_token %}
+        
+        <h2>¡Proceso completado!</h2>
+
+        <div class="input-box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Totam asperiores, unde 
+                ipsam eligendi provident beatae?
+                Qui cum ducimus quidem repellat!
+            </p>
+        </div>
+
+        <div class="button-container">
+            <button type="submit">Enviar email</button>
+        </div>
+
+    </form>
+
+</section>

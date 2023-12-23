@@ -130,7 +130,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 
 
 AUTHENTICATION_BACKENDS = [
@@ -145,3 +145,14 @@ LOGOUT_REDIRECT = '/'
 MEDIA_URL = "/media/"
 # Indicamos donde deben ser buscados
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "josenovato0@gmail.com"
+EMAIL_HOST_PASSWORD = "dvryyyhancubwqtq"
+EMAIL_USE_TLS = True
+

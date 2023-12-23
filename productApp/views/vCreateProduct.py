@@ -35,7 +35,7 @@ def crear_producto(request):
                 return render(request, 'productCreate.html', {"error":error})
 
             
-            return redirect('home')
+            return redirect('enviar_email', codigo)
             
         else:
             print("------Errores de formulario:")
@@ -43,3 +43,4 @@ def crear_producto(request):
             return render(request, 'productCreate.html', {"error":error})
                 
     return render(request, 'productCreate.html')
+
