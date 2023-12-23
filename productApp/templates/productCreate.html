@@ -34,7 +34,7 @@
 
             <div class="input-box">
                 <label for="">Stock</label>
-                <input type="number" name="productStock" placeholder="Ingrese el stock">
+                <input type="number" name="productStock" placeholder="Ingrese el stock" required>
             </div>
 
             <div class="input-box">
@@ -60,6 +60,41 @@
         </div>
 
     </form>
+
+    {% if mensaje_exito %}
+        <!-- Ventana modal de éxito -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="imagen">
+                    <img src="{% static 'img/check.png' %}" alt="" />
+                </div>
+                
+                
+                <p>{{ mensaje_exito }}</p>
+                <div class="button">
+                    <a class="accept" onclick="window.location.href='{% url 'home' %}'">Aceptar</a>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+        <!-- Script para mostrar la ventana modal automáticamente -->
+        <script>
+            window.onload = function () {
+                var modal = document.getElementById('myModal');
+                modal.style.display = 'block';
+
+                // Cerrar la ventana modal al presionar Enter
+                window.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        window.location.href = '{% url "home" %}';
+                    }
+                });
+            }
+        </script>
+    {% endif %}
 
 </section>
 

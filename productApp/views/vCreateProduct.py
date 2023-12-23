@@ -30,12 +30,15 @@ def crear_producto(request):
 
             if not created:
                 # Si el objeto ya existía, se maneja la excepción.
-                error = f"El producto con código {codigo} ya existe en la base de datos."
+                error = f"El producto con código: {codigo} ya existe en la base de datos."
                 print(error)
                 return render(request, 'productCreate.html', {"error":error})
 
             
-            return redirect('enviar_email', codigo)
+            # Después de crear el producto con éxito
+            mensaje_exito = f"El producto con código {codigo} - {nombre_producto} ha sido agregado."
+            return render(request, 'productCreate.html', {"mensaje_exito": mensaje_exito})
+
             
         else:
             print("------Errores de formulario:")
