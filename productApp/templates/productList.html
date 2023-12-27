@@ -13,61 +13,29 @@
 
 <section class="card__container">
 
-    <div class="card">
-        <img src="{% static 'img/avena.jpg'%}" alt="">
-        <div class="card--content">
-            <P class="title"><strong>Producto:</strong>  
-                <span class="sub--title">Name</span>
-            </P>
-            
-            <P class="title"><strong>Stock:</strong> 
-                <span class="sub--title">INT</span>
-            </P>
+    {% for producto in productos %}
 
-            <P class="title"><strong>Price:</strong> 
-                <span class="sub--title">$$</span>
-            </P>
-
-            <a href="" class="btn">Ver más</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{% static 'img/granos.jpg' %}" alt="">
-        <div class="card--content">
-            <P class="title"><strong>Producto:</strong>  
-                <span class="sub--title">Name</span>
-            </P>
-            
-            <P class="title"><strong>Stock:</strong> 
-                <span class="sub--title">INT</span>
-            </P>
-
-            <P class="title"><strong>Price:</strong> 
-                <span class="sub--title">$$</span>
-            </P>
-
-            <a href="" class="btn">Ver más</a>
-        </div>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{% static 'img/avena.jpg' %}" alt="">
-        <div class="card--content">
-            <P class="title"><strong>Producto:</strong>  
-                <span class="sub--title">Name</span>
-            </P>
-            
-            <P class="title"><strong>Stock:</strong> 
-                <span class="sub--title">INT</span>
-            </P>
-
-            <P class="title"><strong>Price:</strong> 
-                <span class="sub--title">$$</span>
-            </P>
-
-            <a href="" class="btn">Ver más</a>
         
-    </div>
+        <div class="card">
+            <img src="{% static 'img/avena.jpg'%}" alt="">
+            <div class="card--content">
+                <P class="title"><strong>Producto:</strong>  
+                    <span class="sub--title">{{ producto.nombre_producto }}</span>
+                </P>
+                
+                <P class="title"><strong>Stock:</strong> 
+                    <span class="sub--title">{{ producto.stock }}</span>
+                </P>
+    
+                <P class="title"><strong>Price:</strong> 
+                    <span class="sub--title">{{ producto.precio }}</span>
+                </P>
+    
+                <a href="" class="btn">Ver más</a>
+            </div>
+        </div>
+
+    {% endfor %}
 </section>
 </body>
 </html>
