@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title%} Home {% endblock%}
+
+{% block content %}
+
+
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/css-productView.css' %}" enctype="multipart/form-data">
+
+<section class="container">
+
+    <form action="" method="post"> {% csrf_token %}
+        
+        <h2>Ver Producto</h2>
+
+        {% for producto in productos %}
+
+            <div class="content">
+                <div class="input-box">
+                    <label for="">Código</label>
+                    <input type="text" name="code" value="{{ producto.codigo }}" placeholder="Ingrese el codigo" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="">Nombre del producto</label>
+                    <input type="text" name="productName" value="{{ producto.nombre_producto }}" placeholder="Ingrese el nombre" required>
+                </div>
+                
+                <div class="input-box">
+                    <label for="">Precio</label>
+                    <input type="number" name="productPrice" value="{{ producto.precio }}" placeholder="Ingrese el precio">
+                </div>
+
+                <div class="input-box">
+                    <label for="">Stock</label>
+                    <input type="number" name="productStock" value="{{ producto.stock }}" placeholder="Ingrese el stock" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="">Descripción</label>
+                    <input type="text" name="productDescription" value="{{ producto.descripcion }}" placeholder="Ingrese descripcion del producto">
+                </div>
+
+                <div class="input-box">
+                    <label for="">Imagen del producto</label>
+                    <input class="file" type="file" name="productImage" placeholder="">
+                </div>
+            </div>
+        {% endfor %}
+        
+        {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <div class="button-container">
+            <button type="submit">Crear Producto</button>
+        </div>
+        <div class="button-container">
+            <a type="submit">Eliminar</a>
+        </div>
+
+    </form>
+
+    {% if mensaje_exito %}
+        <!-- Ventana modal de éxito -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="imagen">
+                    <img src="{% static 'img/check.png' %}" alt="" />
+                </div>
+                
+                
+                <p>{{ mensaje_exito }}</p>
+                <div class="button">
+                    <a class="accept" onclick="window.location.href='{% url 'home' %}'">Aceptar</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Script para mostrar la ventana modal automáticamente -->
+        <script>
+            window.onload = function () {
+                var modal = document.getElementById('myModal');
+                modal.style.display = 'block';
+
+                // Cerrar la ventana modal al presionar Enter
+                window.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        window.location.href = '{% url "home" %}';
+                    }
+                });
+            }
+        </script>
+    {% endif %}
+
+</section>
+
+{% endblock content %}

@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/** Contenido **/
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 350px;
+    max-width: 380px;
+
+    padding: 28px;
+    margin: 28px auto ;
+    box-shadow:  0 15px 20px #ABB2B9;
+}
+
+
+h2 {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: left;
+    color: #2f4f4f;
+    padding-bottom: 8px;
+    border-bottom: 1px solid silver ;
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between  ;
+    padding: 20px 0;
+}
+
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.input-box label {
+    display: block;
+    width: 95%;
+    color: #2f4f4f;
+    font-weight: bold;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+
+.input-box input {
+    height: 40px;
+    width: 95%;
+    padding: 0 10px;
+    margin-left: 4px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    
+}
+
+
+
+
+
+.input-box input:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.button-container {
+    margin: 15px 0;
+}
+
+.button-container button {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #1AEDBA;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+
+    border-radius: 4px;
+
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    border: none;
+
+}
+
+.button-container button:hover{
+    background-color:rgba(26, 237, 184, 0.514);
+}
+
+/* Estilos para la ventana modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+
+
+.imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img {
+    
+    width: 30%;
+    height: 20%;
+    margin-bottom: 15px;
+
+  }
+
+p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    text-align: center;
+  }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.accept {
+    background-color: #ed6755;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+  }
+
+/* ... Fin estilos modales ... */
