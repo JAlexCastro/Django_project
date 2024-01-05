@@ -11,23 +11,27 @@
     <link rel="stylesheet" href="{% static 'base/css-base.css' %}">
 </head>
 <body>
-    <header>
-        <nav class="banner">
-            <div class="banner__logo">
-                <img src="{% static 'img/logo.png' %}" alt="">
-            </div>
 
+    <header>
+        <div class="banner__logo">
+            <img src="{% static 'img/logo.png' %}" alt="">
+        </div> 
+
+        <nav class="navbar">
             <ul>
                 <li><a href="{% url 'home' %}">Inicio</a></li>
-                <li><a href="{% url 'productList' %}">Productos</a></li>
-                <li><a href="{% url 'productCreate' %}">Crear Producto</a></li>
-                <li><a href="{% url 'productUpdate' %}">Actualizar Producto</a></li>
-                <li><a href="{% url 'productDelete' %}">Eliminar Producto</a></li>
-                <li><a href="{% url 'email' %}">Contacto</a></li>
-                
                 <li>
-                    <span>|</span>
+                    <a>Productos +</a>
+                    <ul>
+                        <li><a href="{% url 'productList' %}">Ver Productos</a></li>
+                        <li><a href="{% url 'productCreate' %}">Crear Producto</a></li>
+                        <li><a href="{% url 'productUpdate' %}">Actualizar Producto</a></li>
+                        <li><a href="{% url 'productDelete' %}">Eliminar Producto</a></li>
+                    </ul>
                 </li>
+                
+                <li><a href="{% url 'email' %}">Contacto</a></li>
+
                 {% if user.is_authenticated %}
                     <li>
                         <a href="#">{{user.first_name}} </a>
