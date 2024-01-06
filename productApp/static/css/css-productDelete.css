@@ -40,7 +40,7 @@ h2 {
 .input-box {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 100%;
     padding-bottom: 15px;
 }
 
@@ -56,7 +56,7 @@ h2 {
 
 .input-box input {
     height: 40px;
-    width: 95%;
+    width: 100%;
     padding: 0 10px;
     margin-left: 4px;
     border-radius: 5px;
