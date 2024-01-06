@@ -10,36 +10,47 @@
 
     <section class="content">
 
-        <div class="photo">
-            
+        <div class="title">
+            <h1>Pasea por nuestro sitio</h1>
+            <div class="line"></div>
         </div>
 
-        <div class="column">
+        <div class="card">
             
-            <div class="column__cont column__cont--right">
-                <h1 class="title">
-                    Echa un vistazo a nuestros productos
-                </h1>
-
-                <p>Visualiza todos los productos de nuestra
-                    empresa. ¡Te va encantar!</p>
-
-                <a href="{% url 'productList' %}">Ver productos</a>
+            <div class="row">
+                <div class="col">
+                    <img src="{% static 'img/store.jpg' %}" alt="">
+                    <div class="row__content">
+                        <p class="sub__title"><strong>Comparte tus productos</strong></p>
+                        <p class="text_content">Comparte tus productos con el resto de los usuarios.</p>
+                        
+                        <div class="button">
+                            <a href="{% url 'productList' %}">Compartir</a>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-            
-
-            <div class="column__cont column__cont--left">
-                <h1 class="title">
-                    Sube tus propios productos
-                </h1>
-
-                <p>Sube tus productos para que los demás
-                    vean lo vean.</p>
-
-                <a href="{% url 'productCreate' %}"><span>Subir productos</span></a >
+    
+            <div class="row">
+                <div class="col">
+                    <img src="{% static 'img/store-2.jpg' %}" alt="">
+                    <div class="row__content">
+                        <p class="sub__title"><strong>Visualiza los productos</strong></p>
+                        <p class="text_content">Entra y visualiza los productos de los demás.</p>
+                        
+                        <div class="button">
+                            <a href="{% url 'productCreate' %}">Ver más</a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
             </div>
-            
         </div>
+        
+
+        
 
     </section>
 
