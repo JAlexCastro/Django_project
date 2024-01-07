@@ -15,12 +15,12 @@ La app le permite realizar las operaciones:
 - Tener instalado Python y Django
 
 ####Descargar
-    git clone URL
+    git clone https://github.com/JAlexCastro/Django_project.git
 
 ####Ejecutar
 - Accede al directorio raíz del proyecto.
 ```bash
-cd /DIR/
+cd  Django_project
 ```
 
 - Crear un entorno virtual
