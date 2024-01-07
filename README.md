@@ -11,13 +11,13 @@ La app le permite realizar las operaciones:
 
 # Instalación
 
-####Requisitos
+#### Requisitos
 - Tener instalado Python y Django
 
-####Descargar
+#### Descargar
     git clone https://github.com/JAlexCastro/Django_project.git
 
-####Ejecutar
+#### Ejecutar
 - Accede al directorio raíz del proyecto.
 ```bash
 cd  Django_project
